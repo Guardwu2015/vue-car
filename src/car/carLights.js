@@ -1,3 +1,17 @@
+import headLightsVS from 'shaders/10_vert.glsl'
+import headLightsFS from 'shaders/9_frag.glsl'
+
+import tailLightVS from 'shaders/16_vert.glsl'
+import tailGridFS from 'shaders/15_frag.glsl'
+import tailGridVS from 'shaders/14_vert.glsl'
+
+import flareVS from 'shaders/8_vert.glsl'
+import flareFS from 'shaders/7_frag.glsl'
+
+import turnBarVS from 'shaders/18_vert.glsl'
+import turnBarFS from 'shaders/17_frag.glsl'
+// import stopBarVS from 'shaders/18_vert.glsl'
+
 export default class CarLights {
   constructor (_carChassis, _cargo) {
     this.lfTimer = 0
@@ -24,25 +38,25 @@ export default class CarLights {
       uniforms: {
         lightsT: { value: this.lightsCtrlTurn },
         lightsS: { value: this.lightsCtrlHead }
-      }
-      // vertexShader: headLightsVS,
-      // fragmentShader: headLightsFS
+      },
+      vertexShader: headLightsVS,
+      fragmentShader: headLightsFS
     })
     tailLights.material = new THREE.ShaderMaterial({
       uniforms: {
         lightsT: { value: this.lightsCtrlTurn },
         lightsO: { value: this.lightsCtrlOther }
-      }
-      // vertexShader: tailLightVS,
-      // fragmentShader: tailGridFS
+      },
+      vertexShader: tailLightVS,
+      fragmentShader: tailGridFS
     })
     tailGrid.material = new THREE.ShaderMaterial({
       uniforms: {
         lightsT: { value: this.lightsCtrlTurn },
         lightsO: { value: this.lightsCtrlOther }
-      }
-      // vertexShader: tailGridVS,
-      // fragmentShader: tailGridFS
+      },
+      vertexShader: tailGridVS,
+      fragmentShader: tailGridFS
     })
   }
 
@@ -55,8 +69,8 @@ export default class CarLights {
         size: { value: 1.5 },
         brightness: { value: 1 }
       },
-      // vertexShader: flareVS,
-      // fragmentShader: flareFS,
+      vertexShader: flareVS,
+      fragmentShader: flareFS,
       blending: THREE.AdditiveBlending,
       transparent: true,
       // depthWrite: false,
@@ -90,8 +104,8 @@ export default class CarLights {
       uniforms: {
         texture: { value: _tex }
       },
-      // vertexShader: stopBarVS,
-      // fragmentShader: turnBarFS,
+      vertexShader: turnBarVS,
+      fragmentShader: turnBarFS,
       blending: THREE.AdditiveBlending,
       transparent: true,
       depthTest: false
@@ -128,8 +142,8 @@ export default class CarLights {
         texture: { value: _tex2 },
         lightsT: { value: this.lightsCtrlTurn }
       },
-      // vertexShader: turnBarVS,
-      // fragmentShader: turnBarFS,
+      vertexShader: turnBarVS,
+      fragmentShader: turnBarFS,
       blending: THREE.AdditiveBlending,
       transparent: true,
       depthTest: false

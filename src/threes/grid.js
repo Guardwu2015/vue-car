@@ -1,3 +1,5 @@
+import vShader from 'shaders/22_vert.glsl'
+import fShader from 'shaders/21_frag.glsl'
 export default class Grid {
   constructor (scene) {
     this.mouseActual = new THREE.Vector2(-0.2, 0.3)
@@ -26,8 +28,8 @@ export default class Grid {
           value: 0
         }
       },
-      // vertexShader: vShader,
-      // fragmentShader: fShader,
+      vertexShader: vShader,
+      fragmentShader: fShader,
       blending: THREE.AdditiveBlending,
       transparent: true,
       depthTest: false

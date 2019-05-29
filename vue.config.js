@@ -20,6 +20,15 @@ module.exports = {
       .set('car', resolve('src/car'))
       .set('assets', resolve('src/assets'))
       .set('ui', resolve('src/ui'))
+      .set('shaders', resolve('src/shaders'))
+
+    // 卸载 vue-cli 自带的 glsl:file-loader
+    config.module
+      .rule('glsl')
+      .test(/\.glsl$/)
+      .use('glsl-shader-loader')
+      .loader('glsl-shader-loader')
+      .end()
   },
   configureWebpack: {
     plugins: [

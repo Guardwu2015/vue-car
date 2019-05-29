@@ -1,3 +1,5 @@
+import shaderVert from 'shaders/24_vert.glsl'
+import shaderFrag from 'shaders/23_frag.glsl'
 export default class Skybox {
   constructor (_scene, _color) {
     const boxGeom = new THREE.BoxBufferGeometry(1, 1, 1)
@@ -13,8 +15,8 @@ export default class Skybox {
           value: _color
         }
       },
-      // vertexShader: shaderVert,
-      // fragmentShader: shaderFrag,
+      vertexShader: shaderVert,
+      fragmentShader: shaderFrag,
       side: THREE.BackSide,
       depthTest: true,
       depthWrite: false,

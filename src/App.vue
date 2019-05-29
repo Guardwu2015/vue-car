@@ -194,7 +194,6 @@ export default {
   name: 'app',
   mounted () {
     initApp()
-    console.log('init')
   }
 }
 </script>

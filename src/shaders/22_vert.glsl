@@ -4,7 +4,7 @@ precision mediump float;
 #define WAVE_LENGTH 0.125
 #define SIZE_MAX 0.45
 #define TIME_FACTOR 0.4
-nuniform mat4 modelViewMatrix;
+uniform mat4 modelViewMatrix;
 uniform mat4 viewMatrix;
 uniform mat4 projectionMatrix;
 uniform float vpH;

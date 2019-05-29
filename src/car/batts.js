@@ -8,6 +8,9 @@ import {
 } from 'common/js/util'
 import FF91 from 'car/constants'
 
+import battVert from 'shaders/6_vert.glsl'
+import battFrag from 'shaders/5_frag.glsl'
+
 export default class Batts {
   constructor (_parent, _object) {
     this.showing = false
@@ -50,8 +53,8 @@ export default class Batts {
       uniforms: {
         progress: { value: 0 }
       },
-      // vertexShader: battVert,
-      // fragmentShader: battFrag,
+      vertexShader: battVert,
+      fragmentShader: battFrag,
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthTest: false,

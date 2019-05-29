@@ -1,3 +1,5 @@
+import vShader from 'shaders/20_vert.glsl'
+import fShader from 'shaders/19_frag.glsl'
 export default class Floor {
   constructor (_scene, _pos, _cargo) {
     this.scene = _scene
@@ -11,8 +13,8 @@ export default class Floor {
         led: { value: this.led },
         origin: { value: this.pos }
       },
-      // vertexShader: vShader,
-      // fragmentShader: fShader,
+      vertexShader: vShader,
+      fragmentShader: fShader,
       transparent: true,
       depthWrite: false,
       blending: THREE.MultiplyBlending

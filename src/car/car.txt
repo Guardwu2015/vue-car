@@ -1,0 +1,19 @@
+/****** Car hierarchy *****
+
+CarWhole
+├── wheelFL
+├── wheelFR
+├── wheelBL
+├── wheelBR
+├── Batts
+├── CarChassis
+    ├── BodyBlack
+    ├── BodySilver
+    ├── Brakes
+    ├── FFBack
+    ├── GlassTinted
+    ├── GlassTransparent
+    ├── Headlights
+    ├── Taillights
+    ├── Motors
+    └── Undercarriage

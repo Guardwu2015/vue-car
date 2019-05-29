@@ -1,4 +1,4 @@
-export class FF91 {
+export default class FF91 {
   constructor () {
     this.Accel = 5 // m/s^2
     this.Decel = -10 // m/s^2

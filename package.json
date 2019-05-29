@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "gsap": "^2.1.2",
+    "hammerjs": "^2.0.8",
     "three": "^0.104.0",
     "vue": "^2.6.10"
   },
@@ -21,6 +22,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "glsl-shader-loader": "^0.1.6",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",

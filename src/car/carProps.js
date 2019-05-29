@@ -1,21 +1,20 @@
-import { Vector2, Math } from 'three'
 import Time from 'common/js/time'
-import FF91 from './constants'
+import FF91 from 'car/constants'
 import { normalizeQuadIn, zTween } from 'common/js/util'
-export class CarProps {
+export default class CarProps {
   constructor () {
     this.time = new Time()
-    this.velocity = new Vector2()
+    this.velocity = new THREE.Vector2()
     this.speed = 1
     this.accel = 0
-    this.pos = new Vector2()
+    this.pos = new THREE.Vector2()
     // Momentum
     this.longitMomentum = 0
     this.lateralMomentum = 0
     this.wAngleInner = 0
     this.wAngleOuter = 0
     this.wAngleTarg = 0
-    this.joyVec = new Vector2()
+    this.joyVec = new THREE.Vector2()
     this.keys = []
     this.braking = false
     this.headLights = 2

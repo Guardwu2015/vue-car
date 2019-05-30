@@ -4,7 +4,7 @@ import { zTween } from 'common/js/util'
 export default class Monoc extends CamControl {
   constructor (_options) {
     super(_options)
-    this.camera = new THREE.PerspectiveCamera(_options.fov, super.vpW / super.vpH, 0.1, 100)
+    this.camera = new THREE.PerspectiveCamera(_options.fov, this.vpW / this.vpH, 0.1, 100)
   }
 
   /* ******************** DOM EVENTS ****************** */
@@ -26,9 +26,9 @@ export default class Monoc extends CamControl {
     if (this.gyro.alpha && this.gyro.beta && this.gyro.gamma) {
       // Calculate camera rotations
       this.camera.setRotationFromEuler(this.defaultEuler)
-      this.camera.rotateZ(this.gyro.alpha * super.RADIANS)
-      this.camera.rotateX(this.gyro.beta * super.RADIANS)
-      this.camera.rotateY(this.gyro.gamma * super.RADIANS)
+      this.camera.rotateZ(this.gyro.alpha * this.RADIANS)
+      this.camera.rotateX(this.gyro.beta * this.RADIANS)
+      this.camera.rotateY(this.gyro.gamma * this.RADIANS)
       this.camera.rotation.z += this.gyro.orient
     } else { // If no accelerometer data
       // Rotation angles

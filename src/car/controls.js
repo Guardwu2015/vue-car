@@ -294,6 +294,7 @@ export default class Controls {
 
   // Browser window resize
   onWindowResize () {
+    console.log('window resize')
     if (this.disableRender) {
       this.nav.mobileNavHide()
       this.disableRender = false

@@ -10,7 +10,7 @@ export default class FF91 {
     this.WheelTrack = 1.72 // L to R wheels
     this.WheelBase = 3.200 // F to B wheels
     this.WheelDiam = 0.780 // Wheel diameter
-    this.WheelCirc = FF91.WheelDiam * Math.PI
+    this.WheelCirc = this.WheelDiam * Math.PI
   }
 }
 

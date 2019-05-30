@@ -2,7 +2,9 @@ import {
   TweenLite,
   Power2
 } from 'gsap'
-
+import {
+  Math as threeMath
+} from 'three'
 export default class CardControls {
   constructor (_parent) {
     this.parent = _parent
@@ -35,7 +37,7 @@ export default class CardControls {
         this.activeKnob = this.steerKnob
         break
       case 2:
-        this.activeKnob = this.steerKnob
+        this.activeKnob = this.rearKnob
         break
       default:
         this.activeKnob = this.powerKnob
@@ -47,15 +49,15 @@ export default class CardControls {
   knobMoved (xDisp, yDisp) {
     switch (this.activeKnob) {
       case this.powerKnob:
-        this.knobPos.set(0, THREE.Math.clamp(yDisp, -150, 150))
+        this.knobPos.set(0, threeMath.clamp(yDisp, -150, 150))
         this.renderKnobPos()
         break
       case this.steerKnob:
-        this.knobPos.set(THREE.Math.clamp(xDisp, -150, 150), 0)
+        this.knobPos.set(threeMath.clamp(xDisp, -150, 150), 0)
         this.renderKnobPos()
         break
       case this.rearKnob:
-        this.knobPos.set(THREE.Math.clamp(xDisp, -150, 150), THREE.Math.clamp(yDisp, 0, 10))
+        this.knobPos.set(threeMath.clamp(xDisp, -150, 150), threeMath.clamp(yDisp, 0, 10))
         this.renderKnobPos()
         break
     }

@@ -232,7 +232,7 @@ export default class Controls {
           eventName = 'rear-light-interaction'
           break
       }
-      this.gA.uiEvent(eventName, '3DTour')
+      // this.gA.uiEvent(eventName, '3DTour')
       this.gAKnob = true
     }
   }

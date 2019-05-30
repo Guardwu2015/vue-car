@@ -1,6 +1,7 @@
 import Time from 'common/js/time'
 import FF91 from 'car/constants'
 import { normalizeQuadIn, zTween } from 'common/js/util'
+import { Math as threeMath } from 'three'
 export default class CarProps {
   constructor () {
     this.time = new Time()
@@ -84,14 +85,14 @@ export default class CarProps {
     if (this.joyVec.y >= 0) {
       this.accel = this.joyVec.y * this.ff91.Accel
       // Simulate wind resistance as we reach top speed
-      this.accel *= normalizeQuadIn(this.speed, FF91.MaxVel, FF91.MaxVel - 10)
+      this.accel *= normalizeQuadIn(this.speed, this.ff91.MaxVel, this.ff91.MaxVel - 10)
     } else { // Braking
       this.accel = this.joyVec.y * -this.ff91.Decel
     }
   }
 
   changeHeadlights (_new) {
-    this.headLights = Math.clamp(Math.round(_new), 0, 4)
+    this.headLights = threeMath.clamp(Math.round(_new), 0, 4)
   }
 
   update (_time) {

@@ -1,3 +1,6 @@
+import {
+  Math as threeMath
+} from 'three'
 export default class CamControl {
   constructor (_options) {
     this.forceUpdate = true
@@ -80,7 +83,7 @@ export default class CamControl {
   // Sets distance from focusPos
   setDistance (dist) {
     this.distTarget = dist
-    this.distTarget = THREE.Math.clamp(this.distTarget, this.options.distRange.min, this.options.distRange.max)
+    this.distTarget = threeMath.clamp(this.distTarget, this.options.distRange.min, this.options.distRange.max)
     this.forceUpdate = true
   }
   setDistRange (max, min) {
@@ -148,23 +151,23 @@ export default class CamControl {
   // Camera travels away or toward focusPos
   dolly (distance) {
     this.distTarget += distance
-    this.distTarget = THREE.Math.clamp(this.distTarget, this.options.distRange.min, this.options.distRange.max)
+    this.distTarget = threeMath.clamp(this.distTarget, this.options.distRange.min, this.options.distRange.max)
   }
 
   // Camera orbits by an angle amount
   orbitBy (angleX, angleY) {
     this.rotTarget.x += angleX
     this.rotTarget.y += angleY
-    this.rotTarget.x = THREE.Math.clamp(this.rotTarget.x, this.options.rotRange.xMin, this.options.rotRange.xMax)
-    this.rotTarget.y = THREE.Math.clamp(this.rotTarget.y, this.options.rotRange.yMin, this.options.rotRange.yMax)
+    this.rotTarget.x = threeMath.clamp(this.rotTarget.x, this.options.rotRange.xMin, this.options.rotRange.xMax)
+    this.rotTarget.y = threeMath.clamp(this.rotTarget.y, this.options.rotRange.yMin, this.options.rotRange.yMax)
   }
 
   // Camera orbits to an angle
   orbitTo (angleX, angleY) {
     this.rotTarget.x = angleX
     this.rotTarget.y = angleY
-    this.rotTarget.x = THREE.Math.clamp(this.rotTarget.x, this.options.rotRange.xMin, this.options.rotRange.xMax)
-    this.rotTarget.y = THREE.Math.clamp(this.rotTarget.y, this.options.rotRange.yMin, this.options.rotRange.yMax)
+    this.rotTarget.x = threeMath.clamp(this.rotTarget.x, this.options.rotRange.xMin, this.options.rotRange.xMax)
+    this.rotTarget.y = threeMath.clamp(this.rotTarget.y, this.options.rotRange.yMin, this.options.rotRange.yMax)
   }
 
   // FocusPos moves along the XY axis
@@ -201,7 +204,7 @@ export default class CamControl {
   /* ********************* UPDATES ************************** */
   follow (target) {
     // Place camera on focus position
-    this.distTarget = THREE.Math.clamp(this.distTarget, this.options.distRange.min, this.options.distRange.max)
+    this.distTarget = threeMath.clamp(this.distTarget, this.options.distRange.min, this.options.distRange.max)
     this.distActual += (this.distTarget - this.distActual) * 0.01
     this.focusTarget.set(target.x, target.y + 1.0, target.z + this.distActual)
     this.focusActual.lerp(this.focusTarget, 0.01)

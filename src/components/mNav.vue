@@ -148,4 +148,31 @@ export default {
       }
     }
   }
+  @media (max-aspect-ratio: 12/10), (max-height: 666px) {
+    nav {
+      background-color: rgba(232, 230, 227, 0.9);
+      position: absolute;
+      transform: translateY(-100%);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      pointer-events: auto;
+      touch-action: manipulation;
+
+      &.inverted {
+        background-color: rgba(33, 41, 52, 0.8);
+      }
+      &.visible {
+        transform: translateY(0%);
+      }
+
+      #navInner {
+        top: 0px;
+        margin-top: 0;
+      }
+    }
+  }
 </style>

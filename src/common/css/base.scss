@@ -37,6 +37,66 @@ a:focus {
   outline-offset: -2px;
 }
 
+svg {
+  position: absolute;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  line-height: 1em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  margin: 0 0 24px;
+}
+
+h1:after {
+  content: " ";
+  width: 150px;
+  margin-top: 24px;
+  margin-left: 4px;
+  border-bottom: 4px solid #9a614c;
+  display: block;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 1.25em;
+}
+
+hr {
+  border-top: none;
+  border-bottom: 2px solid #9a614c;
+  width: 75px;
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ul li {
+  margin: 0 0 12px 12px;
+  font-size: 1.5em;
+}
+
+ul li:before {
+  color: #9a614c;
+  content: "\2014   ";
+}
+
 .img-responsive {
   display: block;
   max-width: 100%;

@@ -128,4 +128,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+    #dynamicContent {
+        display: none;
+    }
 </style>

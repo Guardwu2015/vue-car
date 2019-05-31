@@ -1,9 +1,8 @@
 <template>
 <div id="app">
     <dynamic-content />
-
-    <div id="GLCanvas"></div>
-    <div id="CSSCanvas"></div>
+    <gl-canvas />
+    <css-canvas />
     <m-nav />
     <disclaimer />
     <back-btn />
@@ -19,6 +18,8 @@ import navShow from 'components/navShow'
 import dynamicContent from 'components/dynamicContent'
 import disclaimer from 'components/disclaimer'
 import backBtn from 'components/backBtn'
+import glCanvas from 'components/glCanvas'
+import cssCanvas from 'components/cssCanvas'
 
 import initApp from 'threes/initApp'
 
@@ -30,7 +31,9 @@ export default {
     navShow,
     dynamicContent,
     disclaimer,
-    backBtn
+    backBtn,
+    glCanvas,
+    cssCanvas
   },
   mounted () {
     initApp()

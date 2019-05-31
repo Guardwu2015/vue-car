@@ -13,11 +13,12 @@ import ViewTour from 'threes/viewTour'
 import Nav from 'ui/nav'
 
 const Hammer = require('hammerjs')
+const Stats = require('stats.js')
 
 export default class Controls {
   constructor () {
     // Device features
-    this.devMode = false
+    this.devMode = true
     this.zoom = 1
     this.disableHammer = false
     this.disableRender = false
@@ -33,11 +34,11 @@ export default class Controls {
       antialias: true
     })
     this.rendererWGL.setSize(this.vp.x, this.vp.y)
-    // if (this.devMode) {
-    //   this.stats = new Stats()
-    //   this.stats.showPanel(1)
-    //   document.body.appendChild(this.stats.dom)
-    // }
+    if (this.devMode) {
+      this.stats = new Stats()
+      this.stats.showPanel(1)
+      document.body.appendChild(this.stats.dom)
+    }
     document.getElementById('GLCanvas').appendChild(this.rendererWGL.domElement)
     this.backBtn = document.getElementById('backBtn')
     this.backBtn.addEventListener('click', this.backToFF.bind(this), false)

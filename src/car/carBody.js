@@ -31,7 +31,7 @@ export default class CarBody {
     })
 
     // Workaround for browsers without Texture LevelOfDetail support
-    if (!window['EXT_STLOD_SUPPORT']) {
+    if (window['EXT_STLOD_SUPPORT'] === false) { // 好神奇
       this.envCube.minFilter = THREE.LinearFilter
       this.matBodySilver.metalness = 0.05
       this.matBodySilver.roughness = 0.8

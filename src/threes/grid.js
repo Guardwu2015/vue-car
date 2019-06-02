@@ -2,6 +2,7 @@ import vShader from 'shaders/22_vert.glsl'
 import fShader from 'shaders/21_frag.glsl'
 export default class Grid {
   constructor (scene) {
+    this.pointSize = 0.125
     this.mouseActual = new THREE.Vector2(-0.2, 0.3)
     this.mouseTarget = new THREE.Vector2(THREE.Math.randInt(-40, 40), THREE.Math.randInt(-40, 40))
     this.tempVec = new THREE.Vector2()
@@ -55,7 +56,7 @@ export default class Grid {
     }
     this.bufferGeom.addAttribute('position', new THREE.BufferAttribute(this.allPos, 3))
     this.pointsObject = new THREE.Points(this.bufferGeom, this.shaderMat)
-    this.pointsObject.scale.set(0.125, 0.125, 0.125)
+    this.pointsObject.scale.set(this.pointSize, this.pointSize, this.pointSize)
     this.pointsObject.position.z = -0.5
     scene.add(this.pointsObject)
   }

@@ -20,25 +20,25 @@ export default class AssetLoader {
     this.detailBox.innerHTML = 'Loading assets'
     let ext
     let loop = function (i) {
-      ext = '.' + self.manifesto[i].ext
+      ext = `.${self.manifesto[i].ext}`
       switch (self.manifesto[i].type) {
         case 'texture':
-          self.loaderText.load(self.path + 'textures/' + self.manifesto[i].name + ext, function (_obj) {
+          self.loaderText.load(`${self.path}textures/${self.manifesto[i].name}${ext}`, function (_obj) {
             this.assetAquired(_obj, this.manifesto[i].name)
           }.bind(self), undefined, function (_err) {
             this.assetFailed(_err, this.manifesto[i].name)
           }.bind(self))
           break
         case 'mesh':
-          self.loaderMesh.load(self.path + 'meshes/' + self.manifesto[i].name + '.json', function (_obj) {
+          self.loaderMesh.load(`${self.path}meshes/${self.manifesto[i].name}.json`, function (_obj) {
             this.assetAquired(_obj, this.manifesto[i].name)
           }.bind(self), undefined, function (_err) {
             this.assetFailed(_err, this.manifesto[i].name)
           }.bind(self))
           break
         case 'cubetexture':
-          self.loaderCube.setPath(self.path + 'textures/' + self.manifesto[i].name + '/')
-          self.loaderCube.load(['xp' + ext, 'xn' + ext, 'yp' + ext, 'yn' + ext, 'zp' + ext, 'zn' + ext], function (_obj) {
+          self.loaderCube.setPath(`${self.path}textures/${self.manifesto[i].name}/`)
+          self.loaderCube.load([`xp${ext}`, `xn${ext}`, `yp${ext}`, `yn${ext}`, `zp${ext}`, `zn${ext}`], function (_obj) {
             this.assetAquired(_obj, this.manifesto[i].name)
           }.bind(self), undefined, function (_err) {
             this.assetFailed(_err, this.manifesto[i].name)
@@ -61,7 +61,7 @@ export default class AssetLoader {
     this.cargo.addAsset(_name, _obj)
     this.assetCount++
     this.pct = this.assetCount / this.assetTotal
-    this.progBar.style.width = (this.pct * 100) + '%'
+    this.progBar.style.width = `${this.pct * 100}%`
     if (this.assetCount === this.assetTotal) {
       this.complete()
     }

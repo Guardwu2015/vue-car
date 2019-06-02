@@ -1,6 +1,7 @@
 {
-  "name": "vue-car",
+  "name": "F35",
   "version": "0.1.0",
+  "author": "wuyue",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

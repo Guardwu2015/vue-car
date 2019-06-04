@@ -64,6 +64,7 @@ export default class Batts {
 
     // Build mesh
     this.stringMesh = new THREE.Mesh(this.stringGeom, this.stringMat)
+    this.stringMesh.applyMatrix(this.singleBatt.matrix)
     this.stringMesh.position.set(0.65, 0.35, -0.5)
     this.stringMesh.visible = false
     this.parent.add(this.stringMesh)

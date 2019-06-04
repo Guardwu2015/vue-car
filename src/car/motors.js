@@ -1,3 +1,6 @@
+import motorVert from 'shaders/12_vert.glsl'
+import motorFrag from 'shaders/11_frag.glsl'
+
 import {
   TweenLite,
   Power2
@@ -42,8 +45,8 @@ export default class motors {
           value: 0
         }
       },
-      // vertexShader: motorVert,
-      // fragmentShader: motorFrag,
+      vertexShader: motorVert,
+      fragmentShader: motorFrag,
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthTest: false

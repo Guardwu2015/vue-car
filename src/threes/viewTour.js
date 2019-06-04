@@ -59,14 +59,14 @@ export default class ViewTour {
     if (this.sectionActive === -1) {
       return
     }
-    var targetAX = this.cam.rotActual.x
-    var targetAY = Math.max(this.cam.rotActual.y, 0)
-    var minY = 0
+    let targetAX = this.cam.rotActual.x
+    let targetAY = Math.max(this.cam.rotActual.y, 0)
+    let minY = 0
     // Change target angles if defined
     if (_cardProps.camRot !== undefined) {
       targetAY = _cardProps.camRot.y
       minY = targetAY < 0 ? targetAY : 0
-      var angleXDist = THREE.Math.euclideanModulo(_cardProps.camRot.x - this.cam.rotActual.x + 180, 360) - 180
+      let angleXDist = THREE.Math.euclideanModulo(_cardProps.camRot.x - this.cam.rotActual.x + 180, 360) - 180
       targetAX += (angleXDist < -180) ? angleXDist + 360 : angleXDist
     }
     // Animate angles if changed
@@ -99,7 +99,7 @@ export default class ViewTour {
     this.car = new CarBody(this.sceneWGL, _cargo)
     this.floor = new Floor(this.sceneWGL, this.carProps.pos, _cargo)
     this.skybox.setCubeTexture(_cargo.getCubeTexture('envSkybox'))
-    var freeProps = this.mobileView ? Mobile[7] : Desktop[7]
+    const freeProps = this.mobileView ? Mobile[7] : Desktop[7]
     TweenLite.to(this.dirLight.color, 3, { r: 1, g: 1, b: 1 })
     TweenLite.to(this.ambLight.color, 3, { r: 1, g: 1, b: 1 })
     TweenLite.to(this.cam.rotTarget, 3, { x: -125, y: 5 })

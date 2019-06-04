@@ -14,8 +14,8 @@ export default class Card {
     this.backgDOM = document.getElementById('cardBack')
     this.foregDOM = document.createElement('div')
     this.foregDOM.setAttribute('id', 'cardFore')
-    this.foreg3D = new THREE.CSS3DObject(this.foregDOM)
-    this.backg3D = new THREE.CSS3DObject(this.backgDOM)
+    this.foreg3D = new THREE.CSS3DObject(this.foregDOM) // 前景，要展示的内容
+    this.backg3D = new THREE.CSS3DObject(this.backgDOM) // 背景
     window['card'] = this.foreg3D
     window['rad'] = Math.PI / 180
     this.rot = new THREE.Euler()
@@ -76,7 +76,7 @@ export default class Card {
       this.backgDOM.classList.remove('inverted')
     }
     // Set rotation
-    var rad = Math.PI / 180
+    const rad = Math.PI / 180
     this.rot.set(prop.orientation.x * rad, prop.orientation.y * rad, prop.orientation.z * rad)
     this.foreg3D.rotation.copy(this.rot)
     this.backg3D.rotation.copy(this.rot)

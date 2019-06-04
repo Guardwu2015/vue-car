@@ -66,9 +66,11 @@ export default class Controls {
     this.cardControls = new CardControls(this)
     this.mouseMoveRef = this.onMouseMove.bind(this)
     this.firstZoomRef = this.hammerFirstZoom.bind(this)
+
     window.addEventListener('resize', this.onWindowResize.bind(this), false)
     window.addEventListener('wheel', this.gestureWheel.bind(this), false)
     window.addEventListener('mousemove', this.mouseMoveRef, false)
+
     this.initPreloader()
     this.initHammer()
   }

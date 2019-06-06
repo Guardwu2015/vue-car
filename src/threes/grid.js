@@ -47,8 +47,8 @@ export default class Grid {
     this.vertCount = width * height
     this.bufferGeom = new THREE.BufferGeometry()
     this.allPos = new Float32Array(this.vertCount * 3)
-    for (var x = 0; x < width; x++) {
-      for (var y = 0; y < height; y++, i3 += 3) {
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++, i3 += 3) {
         this.allPos[i3 + 0] = (x - Math.round(width / 2))
         this.allPos[i3 + 1] = (y - Math.round(height / 2))
         // this.allPos[i3 + 2] = 0

@@ -95,8 +95,8 @@ export default class CarWheels {
   /* *************************** BUILDING BRAKES **************************** */
   addBrakes (_brakeGroup) {
     this.brakeBL = _brakeGroup
-    var brMeshDisc = this.brakeBL.getObjectByName('Disc')
-    var brMeshPads = this.brakeBL.getObjectByName('Pad')
+    const brMeshDisc = this.brakeBL.getObjectByName('Disc')
+    const brMeshPads = this.brakeBL.getObjectByName('Pad')
     brMeshDisc.geometry.applyMatrix(this.ogMatrix)
     brMeshPads.geometry.applyMatrix(this.ogMatrix)
     brMeshDisc.material = new THREE.MeshPhongMaterial({
@@ -126,7 +126,7 @@ export default class CarWheels {
     this.carWhole.add(this.brakeBR)
   }
 
-  /* *************************** CALCULATE ROTATIONS **************************** */
+  /* ************************* CALCULATE ROTATIONS ************************** */
   turnByRadiusRatio (_props) {
     this.rotOverall = -_props.frameDist / this.ff91.WheelCirc * Math.PI * 2
     this.rotBR = Math.max(this.rotOverall, -this.maxWheelTurn)

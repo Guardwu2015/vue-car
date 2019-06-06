@@ -37,7 +37,7 @@ export default class CarProps {
   }
 
   readKeyboardInput () {
-    for (var i = 0; i < this.keys.length; i++) {
+    for (let i = 0; i < this.keys.length; i++) {
       switch (this.keys[i]) {
         case 38: // Up
           this.accel += this.ff91.Accel

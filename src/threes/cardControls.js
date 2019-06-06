@@ -15,7 +15,7 @@ export default class CardControls {
     this.rearKnob = document.getElementById('rearKnob')
     this.activeKnob = null
     this.knobPos = new THREE.Vector2()
-    for (var i = 0; i < this.frontButtons.length; i++) {
+    for (let i = 0; i < this.frontButtons.length; i++) {
       this.frontButtons[i].addEventListener('click', this.frontLightClick.bind(this, i), false)
     }
     this.closeX.addEventListener('click', this.closeXClick.bind(this), false)

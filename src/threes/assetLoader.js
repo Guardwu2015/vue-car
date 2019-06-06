@@ -47,7 +47,7 @@ export default class AssetLoader {
       }
     }
     const self = this
-    for (var i = 0; i < this.assetTotal; i++) {
+    for (let i = 0; i < this.assetTotal; i++) {
       loop(i)
     }
   }

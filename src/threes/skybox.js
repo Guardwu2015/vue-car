@@ -22,7 +22,7 @@ export default class Skybox {
       depthWrite: false,
       fog: false
     })
-    var boxMesh = new THREE.Mesh(boxGeom, this.boxMat)
+    const boxMesh = new THREE.Mesh(boxGeom, this.boxMat)
     boxGeom.removeAttribute('normal')
     boxGeom.removeAttribute('uv')
     _scene.add(boxMesh)

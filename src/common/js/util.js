@@ -30,7 +30,7 @@ export function normalizeQuadIn (val, min, max) {
  * @param {*} max
  */
 export function normalizeQuadOut (val, min, max) {
-  var x = normalize(val, min, max)
+  let x = normalize(val, min, max)
   return x * (2.0 - x)
 }
 

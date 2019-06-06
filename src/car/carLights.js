@@ -22,6 +22,7 @@ export default class CarLights {
     this.lightsCtrlHead = new THREE.Vector3()
     this.prevHeadlightState = undefined
     this.prevTurnState = undefined
+
     this.addMeshMaterials()
     this.addHeadFlares(_cargo.getTexture('flareHead'))
     this.addStopMesh(_cargo.getTexture('lightStop'))
@@ -34,6 +35,7 @@ export default class CarLights {
     const tailLights = this.carChassis.getObjectByName('TailLights')
     const tailGrid = this.carChassis.getObjectByName('TailGrid')
     tailGrid.geometry.computeVertexNormals()
+
     headLights.material = new THREE.ShaderMaterial({
       uniforms: {
         lightsT: { value: this.lightsCtrlTurn },
@@ -90,6 +92,7 @@ export default class CarLights {
       0.87, 0.22, -0.44,
       0.87, 0.22, -0.44
     ])
+
     const flareHeadGeom = new THREE.BufferGeometry()
     flareHeadGeom.addAttribute('position', new THREE.BufferAttribute(posArray, 3))
     flareHeadGeom.addAttribute('normal', new THREE.BufferAttribute(normArray, 3))
@@ -121,6 +124,7 @@ export default class CarLights {
     this.turnPointMaterial.uniforms['texture'].value = _tex1
     this.turnPointMaterial.uniforms['size'].value = 0.1
     this.turnPointMaterial.uniforms['brightness'].value = 1
+
     let leftTurnGrid = new THREE.BufferGeometry()
     leftTurnGrid.addAttribute('position', new THREE.BufferAttribute(posArray, 3))
     leftTurnGrid.addAttribute('normal', new THREE.BufferAttribute(normArray, 3))
@@ -134,6 +138,7 @@ export default class CarLights {
     let rightTurnGrid = new THREE.BufferGeometry()
     rightTurnGrid.addAttribute('position', new THREE.BufferAttribute(posArray, 3))
     rightTurnGrid.addAttribute('normal', new THREE.BufferAttribute(normArray, 3))
+
     this.turnRightPoints = new THREE.Points(rightTurnGrid, this.turnPointMaterial)
     this.turnRightPoints.visible = false
     this.carChassis.add(this.turnRightPoints)

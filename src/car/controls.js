@@ -223,7 +223,7 @@ export default class Controls {
     this.viewTour.knobMoved(_knobPos)
     // Trigger knob event only once
     if (this.gAKnob === false) {
-      var eventName = ''
+      let eventName = ''
       switch (this.gAActive) {
         case 2:
           eventName = 'powertrain-interaction'
@@ -246,7 +246,7 @@ export default class Controls {
 
   frontLightsChanged (_index) {
     this.viewTour.frontLightsClicked(_index)
-    var eventName = ''
+    let eventName = ''
     switch (_index) {
       case 0:
         eventName = 'frontlights-off'

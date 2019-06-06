@@ -31,8 +31,8 @@ export default class Floor {
       color: 0xffffff,
       wireframe: true
     })
-    var edgeGeom = new THREE.PlaneGeometry(10, 10, 10, 10)
-    var edge = new THREE.Mesh(edgeGeom, edgeMat)
+    const edgeGeom = new THREE.PlaneGeometry(10, 10, 10, 10)
+    const edge = new THREE.Mesh(edgeGeom, edgeMat)
     edge.rotateX(-Math.PI / 2)
     this.scene.add(edge)
   }

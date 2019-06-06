@@ -52,10 +52,12 @@ export default class motors {
       depthTest: false
     })
     this.progUniform = this.material.uniforms['progress']
+
     this.motorFrontSm.material =
       this.motorFrontLg.material =
       this.motorBackR.material =
       this.motorBackL.material = this.material
+
     this.group = new THREE.Group()
     this.group.visible = false
     this.group.add(this.motorBackR)

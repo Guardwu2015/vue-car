@@ -11,7 +11,7 @@ export default class Nav {
     this.navShow.style.transform = 'scale(1.0)'
     this.disclaimer.classList.add('enabled')
     this.activeSection = -1
-    for (var i = 0; i < this.navItems.length; i++) {
+    for (let i = 0; i < this.navItems.length; i++) {
       this.navItems[i].addEventListener('click', this.navClick.bind(this, i), false)
     }
     this.navShow.addEventListener('click', this.mobileNavShow.bind(this), false)
